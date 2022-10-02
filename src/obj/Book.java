@@ -18,9 +18,6 @@ public class Book {
         return bookAuthor;
     }
 
-    public boolean checkDateValidity(long dateGot, long dateRet){
-        return dateGot <= dateRet;
-    }
 
     public void setBookAuthor(String bookAuthor) {
         this.bookAuthor = bookAuthor;
