@@ -1,28 +1,28 @@
 package ext;
 
-import obj.Abon;
+import obj.Abonement;
 import obj.Book;
 
 import java.util.Scanner;
 
-public class IO extends DateWorker {
+public class IO {
 
-    protected static Abon inputAbon(){
-        Abon abon = new Abon("", null);
+    public static Abonement inputAbon(){
+        Abonement abonement = new Abonement("", null);
         print("Введите имя читателя:");
-        abon.setName(inputStr());
+        abonement.setName(inputStr());
 
         print("Введите количество книг у абонента: ");
         int kol = inputInt();
-        for(int i = 0; i<kol; i++) abon.addBook(inputBook());
-        if(abon.getBooks().contains(null)) return null;
-        return abon;
+        for(int i = 0; i<kol; i++) abonement.addBook(inputBook());
+        if(abonement.getBooks().contains(null)) return null;
+        return abonement;
     }
 
-    protected static void printIsBookRetOnTime(Book book){
-        print("Книга возвращена вовремя: "+ isBookRetOnTime(book.getBookGot(),book.getBookRet()));
-        if(!isBookRetOnTime(book.getBookGot(),book.getBookRet())){
-            print("Сдача просрачена на "+ getDaysAfterRet(book.getBookGot(),book.getBookRet()) + " дней");
+    public static void printIsBookRetOnTime(Book book){
+        print("Книга возвращена вовремя: "+ Checker.isBookRetOnTime(book.getBookGot(),book.getBookRet()));
+        if(!Checker.isBookRetOnTime(book.getBookGot(),book.getBookRet())){
+            print("Сдача просрачена на "+ DateWorker.getDaysAfterRet(book.getBookGot(),book.getBookRet()) + " дней");
         }
     }
 
@@ -36,10 +36,10 @@ public class IO extends DateWorker {
         print("Введите автора книги:");
         book.setBookAuthor(inputStr());
         print("Введите дату взятия книги (в формате дд.мм.гггг):");
-        if (!isDatePatternValid(date = inputStr())) return null;
+        if (!Checker.isDatePatternValid(date = inputStr())) return null;
         book.setBookGot(date);
         print("Введите дату возвращения книги (в формате дд.мм.гггг):");
-        if (!isDatePatternValid(date = inputStr())) return null;
+        if (!Checker.isDatePatternValid(date = inputStr())) return null;
         book.setBookRet(date);
         return book;
     }

@@ -4,7 +4,7 @@ import ext.IO;
 
 import java.util.ArrayList;
 
-public class Abon extends IO {
+public class Abonement extends IO {
     private String name;
     private ArrayList<Book> books;
 
@@ -12,7 +12,7 @@ public class Abon extends IO {
         return books;
     }
 
-    public Abon(String name, ArrayList<Book> books) {
+    public Abonement(String name, ArrayList<Book> books) {
         this.name = name;
         this.books = books;
     }
@@ -27,7 +27,7 @@ public class Abon extends IO {
         return books.get(bookIndex).getBookGot();
     }
 
-    public Abon(String name) {
+    public Abonement(String name) {
         this.name = name;
     }
 

@@ -1,12 +1,11 @@
 import ext.IO;
-import obj.Abon;
-import obj.Book;
+import obj.Abonement;
 
-public class main extends IO {
+public class main {
     public static void main(String[] args) {
-        Abon abon;
-        if((abon = inputAbon())==null) return;
+        Abonement abon;
+        if((abon = IO.inputAbon())==null) return;
 
-        printIsBookRetOnTime(abon.getBooks().get(0));
+        IO.printIsBookRetOnTime(abon.getBooks().get(0));
     }
 }
