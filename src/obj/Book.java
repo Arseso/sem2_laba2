@@ -3,13 +3,13 @@ package obj;
 public class Book {
     private String bookAuthor;
     private String bookName;
-    private String bookGot;
+    private String bookNeedRet;
     private String bookRet;
 
-    public Book(String bookAuthor, String bookName, String bookGot, String bookRet) {
+    public Book(String bookAuthor, String bookName, String bookNeedRet, String bookRet) {
         this.bookAuthor = bookAuthor;
         this.bookName = bookName;
-        this.bookGot = bookGot;
+        this.bookNeedRet = bookNeedRet;
         this.bookRet = bookRet;
     }
 
@@ -31,12 +31,12 @@ public class Book {
         this.bookName = bookName;
     }
 
-    public String getBookGot() {
-        return bookGot;
+    public String getBookNeedRet() {
+        return bookNeedRet;
     }
 
-    public void setBookGot(String bookGot) {
-        this.bookGot = bookGot;
+    public void setBookNeedRet(String bookGot) {
+        this.bookNeedRet = bookGot;
     }
 
     public String getBookRet() {

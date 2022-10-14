@@ -23,8 +23,8 @@ public class Abonement extends IO {
         books.add(book);
     }
 
-    public String getBookGot(int bookIndex) {
-        return books.get(bookIndex).getBookGot();
+    public String getBookNeedRet(int bookIndex) {
+        return books.get(bookIndex).getBookNeedRet();
     }
 
     public Abonement(String name) {
@@ -52,18 +52,18 @@ public class Abonement extends IO {
         books.set(bookIndex, books.get(bookIndex));
     }
 
-    public void setBookGot(String bookGot, int bookIndex) {
-        books.get(bookIndex).setBookGot(bookGot);
+    public void setBookNeedRet(String bookNeedRet, int bookIndex) {
+        books.get(bookIndex).setBookNeedRet(bookNeedRet);
         books.set(bookIndex, books.get(bookIndex));
     }
 
     public void setBookName(String bookName, int bookIndex) {
-        books.get(bookIndex).setBookGot(bookName);
+        books.get(bookIndex).setBookNeedRet(bookName);
         books.set(bookIndex, books.get(bookIndex));
     }
 
     public void setBookRet(String bookRet, int bookIndex) {
-        books.get(bookIndex).setBookGot(bookRet);
+        books.get(bookIndex).setBookNeedRet(bookRet);
         books.set(bookIndex, books.get(bookIndex));
     }
 

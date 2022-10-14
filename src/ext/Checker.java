@@ -4,13 +4,13 @@ import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 
 public class Checker {
-    protected static boolean isBookRetOnTime(String sDateGot, String sDateRet){
+    protected static boolean isBookRetOnTime(String sDateNeedRet, String sDateRet){
 
         DateTimeFormatter dtf = DateTimeFormatter.ofPattern("dd.MM.yyyy");
-        LocalDate dateGot = LocalDate.parse(sDateGot,dtf);
+        LocalDate dateNeedRet = LocalDate.parse(sDateNeedRet,dtf);
         LocalDate dateRet = LocalDate.parse(sDateRet,dtf);
 
-        if(dateGot.isAfter(dateRet) || sDateGot.equals(sDateRet)) return true;
+        if(dateNeedRet.isAfter(dateRet) || sDateNeedRet.equals(sDateRet)) return true;
         return false;
     }
 

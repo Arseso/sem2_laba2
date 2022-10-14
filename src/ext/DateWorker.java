@@ -15,12 +15,12 @@ import static java.time.temporal.ChronoUnit.DAYS;
 
 public class DateWorker {
 
-    protected static long getDaysAfterRet(String sDateGot, String sDateRet) {
+    protected static long getDaysAfterRet(String sDateNeedRet, String sDateRet) {
         DateTimeFormatter dtf = DateTimeFormatter.ofPattern("dd.MM.yyyy");
-        LocalDate dateGot = LocalDate.parse(sDateGot,dtf);
+        LocalDate dateNeedRet = LocalDate.parse(sDateNeedRet,dtf);
         LocalDate dateRet = LocalDate.parse(sDateRet,dtf);
 
-        return DAYS.between(dateGot,dateRet);
+        return DAYS.between(dateNeedRet,dateRet);
     }
 
     static int[] getDateFromString(String dateString){

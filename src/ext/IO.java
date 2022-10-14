@@ -20,9 +20,9 @@ public class IO {
     }
 
     public static void printIsBookRetOnTime(Book book){
-        print("Книга возвращена вовремя: "+ Checker.isBookRetOnTime(book.getBookGot(),book.getBookRet()));
-        if(!Checker.isBookRetOnTime(book.getBookGot(),book.getBookRet())){
-            print("Сдача просрачена на "+ DateWorker.getDaysAfterRet(book.getBookGot(),book.getBookRet()) + " дней");
+        print("Книга возвращена вовремя: "+ Checker.isBookRetOnTime(book.getBookNeedRet(),book.getBookRet()));
+        if(!Checker.isBookRetOnTime(book.getBookNeedRet(),book.getBookRet())){
+            print("Сдача просрачена на "+ DateWorker.getDaysAfterRet(book.getBookNeedRet(),book.getBookRet()) + " дней");
         }
     }
 
@@ -37,7 +37,7 @@ public class IO {
         book.setBookAuthor(inputStr());
         print("Введите дату взятия книги (в формате дд.мм.гггг):");
         if (!Checker.isDatePatternValid(date = inputStr())) return null;
-        book.setBookGot(date);
+        book.setBookNeedRet(date);
         print("Введите дату возвращения книги (в формате дд.мм.гггг):");
         if (!Checker.isDatePatternValid(date = inputStr())) return null;
         book.setBookRet(date);
